@@ -10,8 +10,14 @@ from django.shortcuts import render
 # rotas (URLs) e templates, sempre utilizando um diretório que se 
 # refere ao app, no recurso de template ex: receitas/templates/receitas/index.html
 
+# A função render também possui outros argumentos opcionais, onde podemos por exemplo
+# passar variáveis, listas, dicionários pelo context ou até mesmo um status code
+# E podemos usar esses dados nas views para exibir o conteúdo por exemplo.  
+
 def pag_inicial(request):
     return render(request, 'receitas/pag_inicial.html')
 
 def pag_contato(request):
-    return render(request, 'receitas/pag_contatos.html')
+    return render(request, 'receitas/pag_contatos.html', context = {
+        'name':'Willian JR.'
+    }, status = 202)
