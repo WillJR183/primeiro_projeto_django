@@ -15,14 +15,13 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
-from receitas.views import pag_inicial, pag_contato
+from django.urls import path, include
 
-# Funcionamento: HTTP Request (cliente solicita) <-> HTTP Response (servidor responde)
+# Django possui a função include que basicamente inclui as URLs dos Apps
 
 # Rotas
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', pag_inicial),
-    path('contato/', pag_contato)
+    path('', include('receitas.urls'))  # por padrão: '/' + url incluida do app
 ]
