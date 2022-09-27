@@ -16,17 +16,13 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from django.http import HttpResponse
+from receitas.views import pag_inicial, pag_contato
 
 # Funcionamento: HTTP Request (cliente solicita) <-> HTTP Response (servidor responde)
-
-# HTTP Request
-def minha_view(request): # função que recebe um request e retorna um response
-    return HttpResponse('Isso é um teste simulando a resposta do servidor para o cliente.')
-
 
 # Rotas
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contato/', minha_view),
+    path('', pag_inicial),
+    path('contato/', pag_contato)
 ]
