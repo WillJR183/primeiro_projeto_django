@@ -1,9 +1,8 @@
 from django.urls import path
-from receitas.views import pag_inicial, pag_contato
+from receitas.views import pag_inicial
 
 # Rotas
 
 urlpatterns = [
-    path('', pag_inicial),  # dominio + '/'
-    path('contato/', pag_contato),  # dominio + '/contato'
+    path('', pag_inicial),
 ]
