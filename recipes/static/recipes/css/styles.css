@@ -262,3 +262,7 @@ h1, h2, h3, h4, h5, h6 {
 .main-footer a:hover {
     filter: brightness(0.8);
 }
+
+.preparation_steps {
+    padding: var(--spacing-gutter-medium);
+}
